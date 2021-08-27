@@ -1,0 +1,27 @@
+<%= form_with scope: :article, url: article_create_path, locale: true do |f| %>
+  <div class = "container">
+  
+  <div class = "validation_error">
+    <% if @article.errors.any? %>
+      <ul>
+        <% @article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <%end%>
+      </ul>
+    <%end%>
+  </div>
+  
+  <div class = "form_title">
+    <th><%= f.label :Game %></th>
+    <th><%= f.text_field :name %></th>
+  </div>
+  <div class = "form_body">
+    <th><%= f.label :Gameplay%></th>
+    <th><%= f.text_field :body %></th>
+  </div>
+  
+  <div class = "form_button">
+    <%= f.submit :"Add Game" %>
+   </div>
+  <% end %>
+  </div>
